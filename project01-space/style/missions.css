@@ -17,7 +17,7 @@ body{
 
 li{
     list-style-type: none;
-    margin: 4px;
+    margin: 10px;
 }
 
 
@@ -26,6 +26,7 @@ h2{
 background-color: rgb(236, 31, 31);
 color: white; 
 margin: 0;
+font-size: 2.2em;
 padding:2px;
 border-bottom: 4px solid white;
 }
@@ -36,14 +37,15 @@ border-bottom: 4px solid white;
 @media screen and (min-width: 320px) {
 
     #sidebar {
-        height: 40px;
+        height: 50px;
         position: fixed;
         bottom: 0;
-        background-color: rgb(54, 128, 238);
+        background-color: rgb(65, 65, 65);
         width: 100%;  
         text-align: center;
-        border-top: 2px solid white;
-   
+        background-size: 320px;
+        z-index: 1;
+        opacity: 0.9;
     }
 
     #sidebar a {
@@ -51,22 +53,13 @@ border-bottom: 4px solid white;
         float: left;
         width: 33.3%;
         color: white;
-        line-height: 40px; /*height sidebar - 4px(margin bottom white)*/
-        font-size: 24px;
+        line-height: 50px; /*height sidebar - 4px(margin bottom white)*/
+        font-size: 24px; /*must be in pixel, sidebar height can't change with text size!*/
         font-weight: bold;
     }
 
-    div{
-        background-color: rgb(58, 58, 58);
-        color: white;
-    }
-
-
-
-
     span{
         display: block;
-        
     }
 
     /*select only element inside container*/
@@ -83,14 +76,26 @@ border-bottom: 4px solid white;
 
     /*general elements*/
 
-    /*color of title inside main-container*/
+    /*style of titles*/
     span.title{
-        background-color: rgb(54, 128, 238);
-        padding: 4px 2px;
+        padding: 10px ;
+        border-left: 4px solid white;
+        border-bottom: 4px solid white;
+        border-bottom-left-radius: 10px;
+        background-color: rgb(0, 132, 255);
+        font-size: 1.2em;
         font-weight: bold;
+        color: white;
     }
 
-    /*image name and code*/
+    /*set margin for last container, to show all information/footer
+    (this problem is due to fixed sidebar)
+    */
+    .main-container:last-child{
+        margin-bottom: 40px; /*sidebar + footer height*/
+    }
+
+    /*image*/
 
     .image-container{
         position: relative;
@@ -99,51 +104,86 @@ border-bottom: 4px solid white;
 
     div.image-container img{
         width: 100%;
-        
+
+        /*fix border white bottom problem*/
+        position: relative;
+        top:2px;
     }
+
+    /*name*/
 
     .image-container span:nth-of-type(1){/*name*/
         position: absolute;
-        font-size: 2em;
+        font-size: 2.3em;
         bottom: 0px;
         left: 2px;
         font-weight: bold;
+        color: white;
     }
 
-    .image-container span:nth-of-type(2){/*code*/
+    /*code*/
+
+    .image-container span:nth-of-type(2){
+        
         position: absolute;
-        font-size: 1.5em;
-        color: rgb(58, 58, 58);
-        background-color: orange;
-        padding: 4px;
-        top: -6px;
-        right: 2px;
-        font-weight: bold;
+        top :8px;
+        right:0;
+        
+
+        padding: 8px;
+        border:2px solid white;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        
+        font-weight: bold;  
+        font-size: 1.3em;
+        color: white; 
+        
+        background-color: rgb(255, 123, 0);
+      
     }
 
     /*destination*/
     
+    div.destination{ 
+        background-size: 576px; /*second breakpoint*/
+    }
+
+    /*set different background according to destonation*/
+    div.destination.mars{
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ef/PIA23302-FirstHumansOnMars-ArtistConcept.jpg");
+        background-position: 0px;
+    }
+
+    div.destination.moon{
+        background-image: url("https://www.ctcrossmedia.com/wp-content/uploads/2019/03/moon-and-beyond-1920x600.jpg");
+        
+    }
+
+
+    /*style planet name*/
     div.destination span:nth-of-type(2){ 
         text-align: center;
-        font-size: 1.6em;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        /*this font allows to clearly see planet name over the background*/
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color:white;
     }
 
-    
     /*equipment and crew*/
 
-    div.stuff-container {
+    div.crew-container,
+    div.equipment-container{
         width: 50%;
-        float: left;
+        float:left;
     }
 
-    div.stuff-container a{
-        color: white;
+    /*select div in last position of main-container to dix
+    the float bug: floated children don't increase the height of container!*/
+    .fix-float-bug{
+        clear:both;
     }
-
-
-
-
-
     
 }
 
