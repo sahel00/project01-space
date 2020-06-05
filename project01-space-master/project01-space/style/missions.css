@@ -1,0 +1,203 @@
+
+/*
+*****************
+*general elements
+*****************
+*/
+
+
+
+body{
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header{
+    height:50px;
+    background-color: rgb(58, 58, 58);
+    border: none;
+}
+
+li{
+    list-style-type: none;
+    margin: 10px;
+}
+
+
+/*title of section*/
+h2{
+background-color: rgb(236, 31, 31);
+color: white; 
+margin: 0;
+font-size: 2.2em;
+padding:2px;
+border-bottom: 4px solid white;
+}
+
+
+/* CSS styling for mobile devices */
+
+@media screen and (min-width: 320px) {
+
+    #sidebar {
+        height: 50px;
+        position: fixed;
+        bottom: 0;
+        background-color: rgb(65, 65, 65);
+        width: 100%;  
+        text-align: center;
+        background-size: 320px;
+        z-index: 1;
+        opacity: 0.9;
+    }
+
+    #sidebar a {
+        display: block;
+        float: left;
+        width: 33.3%;
+        color: white;
+        line-height: 50px; /*height sidebar - 4px(margin bottom white)*/
+        font-size: 24px; /*must be in pixel, sidebar height can't change with text size!*/
+        font-weight: bold;
+    }
+
+    span{
+        display: block;
+    }
+
+    /*select only element inside container*/
+    span:not(.title){
+        padding: 10px 0;
+    }
+
+
+    /*
+    ***************
+    *main-container
+    ***************
+    */
+
+    /*general elements*/
+
+    /*set left right border to all elements in container*/
+    .main-container{
+        border-left: 4px solid white;
+        border-right: 4px solid white;
+    }
+
+    /*style of titles*/
+    span.title{
+        padding: 10px ;
+        border-top:4px solid white;
+        border-bottom-left-radius: 10px;
+        background-color: rgb(0, 132, 255);
+        font-size: 1.2em;
+        font-weight: bold;
+        color: white;
+    }
+
+    /*apply a border right to separe equipment and crew title*/
+    div.equipment-container span.title{
+        border-right:5px solid white;
+    }
+
+
+    /*set margin for last container, to show all information/footer
+    (this problem is due to fixed sidebar)
+    */
+    .main-container:last-child{
+        margin-bottom: 40px; /*sidebar + footer height*/
+    }
+
+    /*image*/
+
+    .image-container{
+        position: relative;
+        max-width: 576px;
+    }
+
+    div.image-container img{
+        width: 100%;
+
+        /*fix border white bottom problem*/
+        position: relative;
+        top:2px;
+    }
+
+    /*name*/
+
+    .image-container span:nth-of-type(1){/*name*/
+        position: absolute;
+        font-size: 2.3em;
+        bottom: 0px;
+        left: 2px;
+        font-weight: bold;
+        color: white;
+    }
+
+    /*code*/
+
+    .image-container span:nth-of-type(2){
+        
+        position: absolute;
+        top :8px;
+        right:0;
+        
+
+        padding: 8px;
+        border:2px solid white;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        
+        font-weight: bold;  
+        font-size: 1.3em;
+        color: white; 
+        
+        background-color: rgb(255, 123, 0);
+      
+    }
+
+    /*destination*/
+    
+    div.destination{ 
+        background-size: 576px; /*second breakpoint*/
+    }
+
+    /*set different background according to destonation*/
+    div.destination.mars{
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ef/PIA23302-FirstHumansOnMars-ArtistConcept.jpg");
+        background-position: 0px;
+    }
+
+    div.destination.moon{
+        background-image: url("https://www.ctcrossmedia.com/wp-content/uploads/2019/03/moon-and-beyond-1920x600.jpg");
+        
+    }
+
+
+    /*style planet name*/
+    div.destination span:nth-of-type(2){ 
+        text-align: center;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        /*this font allows to clearly see planet name over the background*/
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color:white;
+    }
+
+    /*equipment and crew*/
+
+    div.crew-container,
+    div.equipment-container{
+        width: 50%;
+        float:left;
+    }
+
+    /*select div in last position of main-container to dix
+    the float bug: floated children don't increase the height of container!*/
+    .fix-float-bug{
+        clear:both;
+    }
+    
+}
+
