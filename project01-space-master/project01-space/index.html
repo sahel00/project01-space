@@ -61,31 +61,12 @@
         <div id="news-container">
            
             <h2>News</h2>
-           
-           <script>
-            
-            /*incrementa scroll orizzontale del div aggiungendo la sua larghezza*/
-            function leftscroll() {
-                var x = document.getElementById('articles-container');
-                x.scrollTo(x.scrollLeft - x.offsetWidth, 0 );
-            }
-
-            function rightscroll() {
-                var x = document.getElementById('articles-container');
-                x.scrollTo(x.scrollLeft + x.offsetWidth, 0 );
-            }
-
-
-            </script>
-            
                     
             <!--scroll buttons-->
             <div id="scroll-container">
-                <span id="scroll-left" onclick="leftscroll()">◀</span>
-                <span id="scroll-right" onclick="rightscroll()">▶</span>
+                <span id="scroll-left">◀</span>
+                <span id="scroll-right">▶</span>
             </div>
-
-
 
             <div id = "articles-container">
                 <article>
@@ -149,5 +130,8 @@
     <footer>
 
     </footer>
+
+    <!--permette lo spostamento della scrollbar news quando vengono premute le frecce-->
+    <script src="/js/scrollNews.js"></script>
 </body>
 </html>
