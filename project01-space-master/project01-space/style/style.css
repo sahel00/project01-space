@@ -152,26 +152,32 @@ h3{
     #about-container{
         position: relative;
         background-color: black;
+        color:white;
     }
 
     #about-container div img{
         max-width: 60px; 
     }
 
-    #about-container div:nth-child(1){
+    #about-container div:nth-child(1){/*About Us*/
         width: 100%;
         text-align: center;
     }
 
-    #about-container div:nth-child(2), 
-    #about-container div:nth-child(3){
+    #about-container div:nth-child(2),/*Mission*/ 
+    #about-container div:nth-child(3),/*Join Us*/
+    #about-container div:nth-child(4){/*Astronauts*/
         float: left;
         text-align: center;
-        width: 50%; 
+        width: 33.33%; 
     }
-
+    
     #fix-float-height{
         clear: both;
+    }
+
+    #about-container h3{
+        color:white;
     }
 
 
