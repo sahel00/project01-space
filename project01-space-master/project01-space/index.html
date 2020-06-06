@@ -49,23 +49,78 @@
   
 
     <main>
+
+        <!--gallery-->
         <div id="join-container">
-            <span id="intro">Let ExploreSpace bring the universe into your home</span>
-            <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/s116e05968.jpg">
-            
+            <span id="intro">Don't give space to the imagination</span>
+            <img src="/img/intro.jpg">
         </div>
+        
+        
 
         <div id="news-container">
-            <p ><span>WASHINGTON</span>  The first crewed orbital launch from the United
-            States in nearly nine years took place May 30, placing a SpaceX Crew
-            Dragon spacecraft with two NASA astronauts on board into orbit,
-            bound for the International Space Station.</p>
-            <p ><span>WASHINGTONn</span>A Falcon 9 rocket lifted off from Launch Complex 39A at the Kennedy
-                 Space Center at 3:22 p.m. Eastern. The Crew Dragon spacecraft atop the rocket’s upper stage separated 
-                 12 minutes later after achieving low Earth orbit.</p>
-            <p ><span>WASHINGTONnn</span>“I’m really quite overcome with emotion,” SpaceX Chief Executive Elon Musk,
-                 who founded the company in 2002, said at a post-launch press conference. 
-                 “It’s been 18 years working towards this goal. It’s hard to believe that’s happened.”</p>
+           
+            <h2>News</h2>
+           
+           <script>
+            
+            /*incrementa scroll orizzontale del div aggiungendo la sua larghezza*/
+            function leftscroll() {
+                var x = document.getElementById('articles-container');
+                x.scrollTo(x.scrollLeft - x.offsetWidth, 0 );
+            }
+
+            function rightscroll() {
+                var x = document.getElementById('articles-container');
+                x.scrollTo(x.scrollLeft + x.offsetWidth, 0 );
+            }
+
+
+            </script>
+            
+                    
+            <!--scroll buttons-->
+            <div id="scroll-container">
+                <span id="scroll-left" onclick="leftscroll()">◀</span>
+                <span id="scroll-right" onclick="rightscroll()">▶</span>
+            </div>
+
+
+
+            <div id = "articles-container">
+                <article>
+                    <h3>Combat drone to compete against piloted plane</h3>
+
+                    <p>The US Air Force will pit an advanced autonomous aircraft
+                    against a piloted plane in a challenge set for July 2021. The
+                    project could eventually lead to unpiloted fighter aircraft that
+                    use artificial intelligence (AI). Lt Gen Jack Shanahan, head of
+                    the Pentagon's Joint Artificial Intelligence Center, called the
+                    test a "bold, bold idea".</p>
+                </article>
+
+                <article>
+                    <h3>Combat drone to compete against piloted plane</h3>
+                    
+                    <p>The US Air Force will pit an advanced autonomous aircraft
+                    against a piloted plane in a challenge set for July 2021. The
+                    project could eventually lead to unpiloted fighter aircraft that
+                    use artificial intelligence (AI). Lt Gen Jack Shanahan, head of
+                    the Pentagon's Joint Artificial Intelligence Center, called the
+                    test a "bold, bold idea".</p>
+                </article>
+
+                <article>
+                    <h3>Combat drone to compete against piloted plane</h3>
+                    
+                    <p>The US Air Force will pit an advanced autonomous aircraft
+                    against a piloted plane in a challenge set for July 2021. The
+                    project could eventually lead to unpiloted fighter aircraft that
+                    use artificial intelligence (AI). Lt Gen Jack Shanahan, head of
+                    the Pentagon's Joint Artificial Intelligence Center, called the
+                    test a "bold, bold idea".</p>
+                </article>
+            </div>
         </div>
 
         <div id="about-container">
@@ -86,7 +141,7 @@
                 <p>i nostri Astronauti sono le migliori da fare cliccla sull icona per saperne di piu, ciao questo corso è utile</p>
             </div>
 
-            <div id ="fix"></div>
+            <div id ="fix-float-height"></div>
         </div>
 
     </main>

@@ -1,0 +1,132 @@
+ /*Main Registrazione*/
+
+
+ .container-registrazione{
+    margin-top: 10px;
+    background-image: url(../img/background.jpg);
+}
+
+.container-datiGenerale, .container-contatti, .container-credenziali, .container-altro {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+   
+}
+label{
+    display: block;
+    color: white;
+    font-family: monospace;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+input{
+    display: block;
+    background: transparent;
+    border: 1px solid white;
+    width: 70%;
+    border-radius: 10px;
+    height: 40px;
+    margin-top: 10px;
+    color: white;        
+}
+
+input:focus{
+    border-color: red;
+}
+
+input[name="sesso"],input[name="capelli"], input[name="occhi"]{
+    margin-top: 45px;
+    float: left;
+    width: 40px;
+    height: 20px;
+}
+.radio_l{
+    float: left;
+}
+
+textarea{
+    display: block;
+    background: transparent;
+    border: 1px solid white;
+    width: 70%;
+    border-radius: 10px;
+    height: 200px;
+    margin-top: 10px;
+    color: white;
+    line-height: 30px;     
+}
+
+select{
+    background: red;
+    color: white;
+    margin-top: 30px;
+    width: 50%;
+    height: 50px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    text-align: center;
+}
+
+::-ms-input-placeholder{ /* Microsoft Edge */
+    color: white;
+    text-align: center;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+    text-align: center;
+}
+
+#registrazione{
+    margin-top: 30px;
+    background:	 #cc9900;
+    width: 30%;
+}
+#cancella{
+    background:	 red;
+    width: 30%;
+}
+}
+/*CSS per Table*/
+@media screen and (min-width:576px){
+
+}
+
+/*CSS per Large Screen Desktop*/
+@media screen and (min-width:992px) {
+
+.navigation-bar li{
+    display: inline-block;
+    padding: 15px;
+}
+
+ul li ul{
+    margin-top: 15px;
+    margin-right: 43%;
+    visibility: hidden;
+    position: absolute;
+}
+
+/*Rule che sovvrasrive il background dello drop-menu dei Media precedenti*/
+.navigation-bar ul li ul li{
+    background: black;
+}
+
+.navigation-bar ul li:hover{
+    background:red;
+}
+
+ul li:hover > ul{
+    visibility: visible;
+    text-align: left;
+}
+
+/*Rule in cui riportiamo i sub-menu a tutta la largezza del blocco*/
+.navigation-bar ul li ul li{
+    display: block;
+}
